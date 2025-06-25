@@ -149,17 +149,24 @@ function setStateModalOpen (pokemon, view) {
 }
 
 function setDatabaseLinks(pokemonName, pokemonNumber)
-{
-	let modifiedName = pokemonName.replace(
-		/(\w*) (\w*)/,
-		(capture1, capture2, capture3) => { 
-			if(capture3[0] == null)
-			{
-				return capture2;
+{	
+	let modifiedName;
+	if (pokemonName == "mr. mime") {
+		modifiedName = "mr. mime";
+	} else if (pokemonName == "mr. rime") {
+		modifiedName = "mr. rime";
+	} else {
+		modifiedName = pokemonName.replace(
+			/(\w*) (\w*)/,
+			(capture1, capture2, capture3) => { 
+				if(capture3[0] == null)
+				{
+					return capture2;
+				}
+				capture2 = capture2[0].toUpperCase() + capture2.substring(1); capture3 = capture3[0].toUpperCase() + capture3.substring(1); return capture2 + "_" + capture3;
 			}
-			capture2 = capture2[0].toUpperCase() + capture2.substring(1); capture3 = capture3[0].toUpperCase() + capture3.substring(1); return capture2 + "_" + capture3;
-		}
-	);
+		);
+	}
 
 	let idx = modifiedName.indexOf("-");
 	if(idx != -1)
@@ -181,10 +188,14 @@ function setDatabaseLinks(pokemonName, pokemonNumber)
 	pdbName = pdbName.replace("♂", "-m");
 	pdbName = pdbName.replace("♀", "-f");
 	pdbName = pdbName.replace("'", "");
+	pdbName = pdbName.replace(" ", "-");
+	pdbName = pdbName.replace(".", "");
 	if(pokemonName == "type-null")
 		bulbaName = "Type:_Null" // Bulbapedia has odd formatting for Type: Null
 	// Jangmo-o line has the second "o" lower-case on Bulbapedia
 	bulbaName = bulbaName.replace("o-O", "o-o");
+	bulbaName = bulbaName.replace("mr. m", "Mr._M");
+	bulbaName = bulbaName.replace("mr. r", "Mr._R");
 	bulbaName = bulbaName.replace("Tapu-", "Tapu_"); // Specific hyphen replacement for the Tapu's but the Gen 9 hyphenated pokemon don't switch to underscore
 	serebiiName = serebiiName.replace(" ", "");
 	document.getElementById('bulba-link').innerHTML = `<a target="_blank" class="btn btn-secondary" rel="noopener noreferrer" href="https://bulbapedia.bulbagarden.net/wiki/${bulbaName}_(Pok%C3%A9mon)">Bulbapedia</a>`;
