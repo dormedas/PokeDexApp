@@ -149,9 +149,7 @@ function setStateModalOpen (pokemon, view) {
 }
 
 function setDatabaseLinks(pokemonName, pokemonNumber)
-{
-	console.log(pokemonName, pokemonNumber);
-	
+{	
 	let modifiedName;
 	if (pokemonName == "mr. mime") {
 		modifiedName = "mr. mime";
@@ -169,8 +167,6 @@ function setDatabaseLinks(pokemonName, pokemonNumber)
 			}
 		);
 	}
-	
-	console.log (modifiedName);
 
 	let idx = modifiedName.indexOf("-");
 	if(idx != -1)
