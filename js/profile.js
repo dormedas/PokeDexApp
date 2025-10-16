@@ -75,6 +75,7 @@ function getProfileData (user) {
 		let trade = 0;
 		let place = 0;
 		let caught = 0;
+		let lv100 = 0;
 		const pokemonList = data.pokemon;
 		for (const pokemon in pokemonList) {
 			switch (pokemonList[pokemon]) {
@@ -89,15 +90,21 @@ function getProfileData (user) {
 				case "caught":
 					caught++;
 					break;
+				case "lv100":
+					lv100++;
+					break;
 			}
 		}
+		
+		let dexTotal = caught + lv100;
 		
 		let statsContent = `<h4>Statistics</h4>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon being traded</strong></p></div><div class="col-6"><p>${trade}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon ready to place</strong></p></div><div class="col-6"><p>${place}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon caught</strong></p></div><div class="col-6"><p>${caught}</p></div></div>`;
+		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon at Lv100</strong></p></div><div class="col-6"><p>${lv100}</p></div></div>`;
 		//statsContent += `<div class="row"><div class="col-6"><strong>Living Dex progress</strong></p></div><div class="col-6"><p>${Math.floor((caught / totalPokemon) * 100)}%</p></div></div>`;
-		statsContent += `<div class="row"><div class="col-6"><strong>Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((caught / totalPokemon) * 100)}%;" aria-valuenow="${Math.floor((caught / totalPokemon) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((caught / totalPokemon) * 100)}%</div></div></div></div>`;
+		statsContent += `<div class="row"><div class="col-6"><strong>Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((dexTotal / totalPokemon) * 100)}%;" aria-valuenow="${Math.floor((dexTotal / totalPokemon) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((dexTotal / totalPokemon) * 100)}%</div></div></div></div>`;
 		stats.innerHTML = statsContent;
     });
 	
