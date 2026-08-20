@@ -136,6 +136,9 @@ function setStateModalOpen (pokemon, view) {
 	document.getElementById('setStateLv100Image').src = sourceImage;
 	document.getElementById('setStateLv100Number').innerHTML = sourceNumber;
 	document.getElementById('setStateLv100Name').innerHTML = sourceName;
+	document.getElementById('setStateEvolveImage').src = sourceImage;
+	document.getElementById('setStateEvolveNumber').innerHTML = sourceNumber;
+	document.getElementById('setStateEvolveName').innerHTML = sourceName;
 
 	document.getElementById('setStateMenu').setAttribute('pokemonid', pokemon);
 	document.getElementById('setStateMenu').setAttribute('viewtype', view);
@@ -242,7 +245,9 @@ function setDatabaseLinks(pokemonName, pokemonNumber)
 }
 
 function setState (state) {
+	console.log(state)
 	const endState = state.substring(state.length - 5).toLowerCase();
+	console.log(endState)
 	const pokemon = document.getElementById('setStateMenu').getAttribute('pokemonid');
 	const view = document.getElementById('setStateMenu').getAttribute('viewtype');
 	
@@ -260,6 +265,7 @@ function setState (state) {
 		pokemonDiv.classList.remove("place");
 		pokemonDiv.classList.remove("lv100");
 		pokemonDiv.classList.remove("caught");
+		pokemonDiv.classList.remove("evolve");
 		pokemonDiv.classList.add(endState);
 	}
 	
