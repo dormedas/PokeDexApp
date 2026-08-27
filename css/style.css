@@ -137,7 +137,7 @@ table.evo-table thead>tr>th { text-align: center; font-size: 0.8em; }
 table.evo-table tbody>tr>th { text-align: right; }
 table.evo-table thead>tr>th>span { font-weight: normal!important; }
 table.evo-table img { max-width: 100px; height: auto; }
-table.evo-table input { height: 16px; width: 16px; margin-left: -2.5rem!important; }
+table.evo-table input { height: 16px; width: 16px; /*margin-left: -2.5rem!important;*/ }
 
 /* --------------------------------- DARK MODE ---------------------------------- */
 .dark-mode { background-color: black; color: white; }
@@ -170,10 +170,12 @@ table.evo-table input { height: 16px; width: 16px; margin-left: -2.5rem!importan
     h4.dex-entry-name { font-size: 0.6em; padding: 0; }
     h4.dex-entry-form { font-size: 0.55em; padding: 0; }
 	.loading-text { display: none; }
+	table.evo-table img { max-width: 74px; }
 }
 
 @media only screen and (max-width: 480px) {
 	.toggle-switch { position: relative; right: 0; }
+	table.evo-table img { max-width: 72px; }
 }
 
 @media only screen and (max-width: 450px) {
@@ -182,11 +184,13 @@ table.evo-table input { height: 16px; width: 16px; margin-left: -2.5rem!importan
     h4.dex-entry-form { font-size: 0.55em; padding: 0; }
 	.navbar-toggler-icon { width: 1em; height: 1em; }
 	.navbar-brand { font-size: 1rem; }
+	table.evo-table img { max-width: 68px; }
 }
 
 @media only screen and (max-width: 400px) {
     h4.dex-entry-name { font-size: 0.5em; padding: 0; }
     h4.dex-entry-form { font-size: 0.5em; padding: 0; }
+	table.evo-table img { max-width: 60px; }
 }
 
 @media only screen and (min-width: 576px) {
