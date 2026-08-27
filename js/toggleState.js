@@ -260,12 +260,14 @@ function setState (state) {
 		pokemonDiv.classList.remove("place");
 	} else if (pokemonDiv.classList.contains("lv100") && endState === "lv100") {
 		pokemonDiv.classList.remove("lv100");
+	} else if (pokemonDiv.classList.contains("evolv") && endState === "evolv") {
+		pokemonDiv.classList.remove("evolv");
 	} else {
 		pokemonDiv.classList.remove("trade");
 		pokemonDiv.classList.remove("place");
 		pokemonDiv.classList.remove("lv100");
 		pokemonDiv.classList.remove("caught");
-		pokemonDiv.classList.remove("evolve");
+		pokemonDiv.classList.remove("evolv");
 		pokemonDiv.classList.add(endState);
 	}
 	
