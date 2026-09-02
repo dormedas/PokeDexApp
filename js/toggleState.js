@@ -50,6 +50,12 @@ function toggleCaughtState (pokemon, view) {
 				endState = "caught";
 				checkComplete (pokemon);
 				break;
+			case "evolv":
+				toggleState.remove("evolv");
+				toggleState.add("caught");
+				endState = "caught";
+				checkComplete (pokemon);
+				break;
 			case "lv100":
 				toggleState.remove("lv100");
 				toggleState.remove("caught");
@@ -75,6 +81,11 @@ function toggleCaughtState (pokemon, view) {
 				break;
 			case "place":
 				toggleState.remove("place");
+				toggleState.add("caught");
+				endState = "caught";
+				break;
+			case "evolv":
+				toggleState.remove("evolv");
 				toggleState.add("caught");
 				endState = "caught";
 				break;
@@ -522,7 +533,6 @@ function setDexState (nationalNormal, altNormal, nationalShiny, altShiny) {
 function getProfileData (user) {
 	// Fetch the user's data
 	const userData = db.collection('userData').doc(user.uid);
-	
 	// Check to see if user has checklist progress in the database
 	userData.get().then((doc) => {
 		const data = doc.data();

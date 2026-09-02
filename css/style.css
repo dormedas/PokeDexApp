@@ -127,8 +127,8 @@ h4.dex-entry-form { text-align: center; font-size: 0.6em; text-transform: capita
 
 .dex-entry.lv100:before { content: url(/assets/icons/lv100.svg); height: 1.5em; width: 1.5em; position: absolute; right: 0.5em; z-index: 5; top: 10vw; }
 .dex-entry-list td.dex-entry-img div.lv100:before { content: url(/assets/icons/lv100.svg); height: 1.25em; width: 1.25em; position: absolute; right: 0.25em; top: 2em; z-index: 5; }
-.dex-entry.evolv:before { content: url(/assets/icons/rare-candy.png); height: 1.5em; width: 1.5em; position: absolute; right: 0.5em; z-index: 5; top: 10vw; }
-.dex-entry-list td.dex-entry-img div.evolv:before { content: url(/assets/icons/rare-candy.png); height: 1.25em; width: 1.25em; position: absolute; right: 0.25em; top: 2em; z-index: 5; }
+.dex-entry.evolv:before { content: url(/assets/icons/arrow-up-light.svg); height: 1.5em; width: 1.5em; position: absolute; right: 0.5em; z-index: 5; top: 10vw; }
+.dex-entry-list td.dex-entry-img div.evolv:before { content: url(/assets/icons/arrow-up-light.svg); height: 1em; width: 1em; position: absolute; right: 0.25em; top: 2em; z-index: 5; }
 
 .box-alt-info { float: right; margin-right: 1em; margin-top: 0.5em; font-size: 0.8em; }
 
@@ -153,6 +153,8 @@ table.evo-table input { height: 16px; width: 16px; /*margin-left: -2.5rem!import
 .dark-mode .trade:before { content: url(/assets/icons/trade-dark.svg); }
 .dark-mode .place:before { content: url(/assets/icons/box-dark.svg);  }
 
+.dark-mode .evolv:before { content: url(/assets/icons/arrow-up-dark.svg); }
+
 .dark-mode img.screenshot { box-shadow: none; }
 .dark-mode table.evo-table { color: white; }
 .dark-mode .table-striped>tbody>tr:nth-of-type(odd)>* { --bs-table-accent-bg: rgba(255,255,255,0.3); color: white; }
@@ -160,6 +162,10 @@ table.evo-table input { height: 16px; width: 16px; /*margin-left: -2.5rem!import
 
 .dark-mode .list-view-table { color: white; }
 .dark-mode .list-view-table { color: white; }
+
+.dark-mode .list-view-table th { color: black; }
+.dark-mode .list-view-table th.dex-entry-number { color: white; }
+/*.dark-mode .list-view-table tr.dex-entry-list { color: white; }*/
 
 .dark-mode .modal-content { background-color: var(--dark); }
 .dark-mode #setStateMenu .modal-footer { background-color: var(--darksecondary); }
