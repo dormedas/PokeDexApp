@@ -154,6 +154,7 @@ table.evo-table input { height: 16px; width: 16px; /*margin-left: -2.5rem!import
 .dark-mode .place:before { content: url(/assets/icons/box-dark.svg);  }
 
 .dark-mode .evolv:before { content: url(/assets/icons/arrow-up-dark.svg); }
+.dark-mode .dex-entry-list td.dex-entry-img div.evolv:before { content: url(/assets/icons/arrow-up-dark.svg); }
 
 .dark-mode img.screenshot { box-shadow: none; }
 .dark-mode table.evo-table { color: white; }

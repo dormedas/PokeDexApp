@@ -1,3 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+  <!-- Generator: Adobe Illustrator 30.7.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 114)  -->
+  <path d="M14.01,8c0-3.32-2.69-6.01-6.01-6.01S1.99,4.68,1.99,8s2.69,6.01,6.01,6.01,6.01-2.69,6.01-6.01M8.38,10.63c0,.21-.17.38-.38.38s-.38-.17-.38-.38v-4.35l-1.61,1.61c-.15.15-.38.15-.53,0s-.15-.38,0-.53l2.25-2.25c.15-.15.38-.15.53,0,0,0,0,0,0,0l2.25,2.25c.15.15.15.38,0,.53s-.38.15-.53,0l-1.61-1.61v4.35Z"/>
 </svg>
