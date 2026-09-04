@@ -1,4 +1,5 @@
 const totalPokemon = 2950;	
+const totalShinyPokemon = 1352; // Includes all forms!
 
 function changeCollapse () {
 	const user = firebase.auth().currentUser;
@@ -53,7 +54,8 @@ function getProfileData (user) {
 				detailsContent += '<img src="/assets/providers/google.svg" class="provider" alt="Google" width="24" height="24">';
 				break;
 			default:
-				alert ('Error getting linked accounts');
+				detailsContent += `<div>None</div>`
+				//alert ('Error getting linked accounts');
 		}
 	});
 	detailsContent += `</div>`;
@@ -76,8 +78,10 @@ function getProfileData (user) {
 		let place = 0;
 		let caught = 0;
 		let lv100 = 0;
+		let shiny = 0;
 		const pokemonList = data.pokemon;
 		for (const pokemon in pokemonList) {
+			let is_shiny = pokemon.indexOf('shiny') != -1;
 			switch (pokemonList[pokemon]) {
 				case "":
 					break;
@@ -89,12 +93,17 @@ function getProfileData (user) {
 					break;
 				case "caught":
 					caught++;
+					if (is_shiny)
+						shiny++;
 					break;
 				case "lv100":
 					lv100++;
+					if (is_shiny)
+						shiny++;
 					break;
 			}
 		}
+		console.log(shiny);
 		
 		let dexTotal = caught + lv100;
 		
@@ -103,8 +112,9 @@ function getProfileData (user) {
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon ready to place</strong></p></div><div class="col-6"><p>${place}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon caught</strong></p></div><div class="col-6"><p>${caught}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon at Lv100</strong></p></div><div class="col-6"><p>${lv100}</p></div></div>`;
-		//statsContent += `<div class="row"><div class="col-6"><strong>Living Dex progress</strong></p></div><div class="col-6"><p>${Math.floor((caught / totalPokemon) * 100)}%</p></div></div>`;
+		statsContent += `<div class="row"><div class="col-6"><strong>Shiny Pok&eacute;mon</strong></p></div><div class="col-6"><p>${shiny}</p></div></div>`
 		statsContent += `<div class="row"><div class="col-6"><strong>Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((dexTotal / totalPokemon) * 100)}%;" aria-valuenow="${Math.floor((dexTotal / totalPokemon) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((dexTotal / totalPokemon) * 100)}%</div></div></div></div>`;
+		statsContent += `<div class="row"><div class="col-6"><strong>Shiny Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((shiny / totalShinyPokemon) * 100)}%;" aria-valuenow="${Math.floor((shiny / totalShinyPokemon) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((dexTotal / totalShinyPokemon) * 100)}%</div></div></div></div>`;
 		stats.innerHTML = statsContent;
     });
 	
