@@ -256,9 +256,7 @@ function setDatabaseLinks(pokemonName, pokemonNumber)
 }
 
 function setState (state) {
-	console.log(state)
 	const endState = state.substring(state.length - 5).toLowerCase();
-	console.log(endState)
 	const pokemon = document.getElementById('setStateMenu').getAttribute('pokemonid');
 	const view = document.getElementById('setStateMenu').getAttribute('viewtype');
 	
@@ -533,6 +531,7 @@ function setDexState (nationalNormal, altNormal, nationalShiny, altShiny) {
 function getProfileData (user) {
 	// Fetch the user's data
 	const userData = db.collection('userData').doc(user.uid);
+	
 	// Check to see if user has checklist progress in the database
 	userData.get().then((doc) => {
 		const data = doc.data();
