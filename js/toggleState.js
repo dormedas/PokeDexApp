@@ -50,6 +50,12 @@ function toggleCaughtState (pokemon, view) {
 				endState = "caught";
 				checkComplete (pokemon);
 				break;
+			case "evolv":
+				toggleState.remove("evolv");
+				toggleState.add("caught");
+				endState = "caught";
+				checkComplete (pokemon);
+				break;
 			case "lv100":
 				toggleState.remove("lv100");
 				toggleState.remove("caught");
@@ -75,6 +81,11 @@ function toggleCaughtState (pokemon, view) {
 				break;
 			case "place":
 				toggleState.remove("place");
+				toggleState.add("caught");
+				endState = "caught";
+				break;
+			case "evolv":
+				toggleState.remove("evolv");
 				toggleState.add("caught");
 				endState = "caught";
 				break;
@@ -136,6 +147,9 @@ function setStateModalOpen (pokemon, view) {
 	document.getElementById('setStateLv100Image').src = sourceImage;
 	document.getElementById('setStateLv100Number').innerHTML = sourceNumber;
 	document.getElementById('setStateLv100Name').innerHTML = sourceName;
+	document.getElementById('setStateEvolveImage').src = sourceImage;
+	document.getElementById('setStateEvolveNumber').innerHTML = sourceNumber;
+	document.getElementById('setStateEvolveName').innerHTML = sourceName;
 
 	document.getElementById('setStateMenu').setAttribute('pokemonid', pokemon);
 	document.getElementById('setStateMenu').setAttribute('viewtype', view);
@@ -255,11 +269,14 @@ function setState (state) {
 		pokemonDiv.classList.remove("place");
 	} else if (pokemonDiv.classList.contains("lv100") && endState === "lv100") {
 		pokemonDiv.classList.remove("lv100");
+	} else if (pokemonDiv.classList.contains("evolv") && endState === "evolv") {
+		pokemonDiv.classList.remove("evolv");
 	} else {
 		pokemonDiv.classList.remove("trade");
 		pokemonDiv.classList.remove("place");
 		pokemonDiv.classList.remove("lv100");
 		pokemonDiv.classList.remove("caught");
+		pokemonDiv.classList.remove("evolv");
 		pokemonDiv.classList.add(endState);
 	}
 	
