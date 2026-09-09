@@ -114,7 +114,7 @@ function getProfileData (user) {
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon at Lv100</strong></p></div><div class="col-6"><p>${lv100}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Shiny Pok&eacute;mon</strong></p></div><div class="col-6"><p>${shiny}</p></div></div>`
 		statsContent += `<div class="row"><div class="col-6"><strong>Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((dexTotal / totalPokemon) * 100)}%;" aria-valuenow="${Math.floor((dexTotal / totalPokemon) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((dexTotal / totalPokemon) * 100)}%</div></div></div></div>`;
-		statsContent += `<div class="row"><div class="col-6"><strong>Shiny Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((shiny / totalShinyPokemon) * 100)}%;" aria-valuenow="${Math.floor((shiny / totalShinyPokemon) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((dexTotal / totalShinyPokemon) * 100)}%</div></div></div></div>`;
+		statsContent += `<div class="row"><div class="col-6"><strong>Shiny Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((shiny / totalShinyPokemon) * 100)}%;" aria-valuenow="${Math.floor((shiny / totalShinyPokemon) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((shiny / totalShinyPokemon) * 100)}%</div></div></div></div>`;
 		stats.innerHTML = statsContent;
     });
 	
