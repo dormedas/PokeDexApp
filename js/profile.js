@@ -117,7 +117,7 @@ function getProfileData (user) {
 		
 		let dexTotal = caught + lv100;
 		
-		let statsContent = `<h4>Statistics</h4>`;
+		let statsContent = `<h4 i18n="profile-statistics">Statistics</h4>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon being traded</strong></p></div><div class="col-6"><p>${trade}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon ready to place</strong></p></div><div class="col-6"><p>${place}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon needing evolution</strong></p></div><div class="col-6"><p>${evolve}</p></div></div>`;
@@ -168,6 +168,8 @@ function getProfileData (user) {
 			document.getElementById('setAltShiny').checked = true;
 		}
 		document.getElementById('setAltShiny').addEventListener("click", changeDexDisplay, false);
+
+		window.retranslate();
 	}).catch((error) => {
 		console.log('Error getting user settings: ', error);
 	});

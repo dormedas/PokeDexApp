@@ -3,17 +3,17 @@ const primaryNav = document.getElementById('primaryNav');
 
 let primaryNavContents = '<div class="container-fluid">';
 primaryNavContents += '<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>';
-primaryNavContents += '<a class="navbar-brand" href="/">Living Pok&eacute;Dex Tracker<span class="d-none d-lg-inline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></a>';
+primaryNavContents += '<a class="navbar-brand" i18n="pokedex-title" href="/">Living Pok&eacute;Dex Tracker<span class="d-none d-lg-inline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></a>';
 primaryNavContents += '<div class="collapse navbar-collapse" id="navbarCollapse">';
 primaryNavContents += '<ul class="navbar-nav mr-auto">';
-primaryNavContents += '<li class="nav-item" id="nav-home"><a class="nav-link" href="/">Home</a></li>';
-primaryNavContents += '<li class="nav-item" id="nav-pokedex"><a class="nav-link" href="/pokedex/">Pok&eacute;dex</a></li>';
-primaryNavContents += '<li class="nav-item" id="nav-about"><a class="nav-link" href="/about/">About</a></li>';
-primaryNavContents += '<li class="nav-item" id="nav-alts"><a class="nav-link" href="/alts/">Alt Forms Guide</a></li>';
-primaryNavContents += '<li class="nav-item" id="nav-faq"><a class="nav-link" href="/faq/">FAQ</a></li>';
-primaryNavContents += '<li class="nav-item" id="nav-feedback"><a class="nav-link" href="/feedback/">Feedback</a></li>';
-primaryNavContents += '<li class="nav-item" id="nav-news"><a class="nav-link" href="/news/">News</a></li>';
-primaryNavContents += '<li class="nav-item" id="nav-donate"><a class="nav-link" href="/donate/">Donate</a></li>';
+primaryNavContents += '<li class="nav-item" id="nav-home"><a class="nav-link" href="/" i18n="navbar-home">Home</a></li>';
+primaryNavContents += '<li class="nav-item" id="nav-pokedex"><a class="nav-link" href="/pokedex/" i18n="navbar-pokedex">Pok&eacute;dex</a></li>';
+primaryNavContents += '<li class="nav-item" id="nav-about"><a class="nav-link" href="/about/" i18n="navbar-about">About</a></li>';
+primaryNavContents += '<li class="nav-item" id="nav-alts"><a class="nav-link" href="/alts/" i18n="navbar-altforms">Alt Forms Guide</a></li>';
+primaryNavContents += '<li class="nav-item" id="nav-faq"><a class="nav-link" href="/faq/" i18n="navbar-faq">FAQ</a></li>';
+primaryNavContents += '<li class="nav-item" id="nav-feedback"><a class="nav-link" href="/feedback/" i18n="navbar-feedback">Feedback</a></li>';
+primaryNavContents += '<li class="nav-item" id="nav-news"><a class="nav-link" href="/news/" i18n="navbar-news">News</a></li>';
+primaryNavContents += '<li class="nav-item" id="nav-donate"><a class="nav-link" href="/donate/" i18n="navbar-donate">Donate</a></li>';
 primaryNavContents += '</ul></div>';
 
 // Dark mode button

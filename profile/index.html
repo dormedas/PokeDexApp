@@ -63,7 +63,6 @@
 		  to avoid connecting the SDK to running emulators.
 		--> 
 	<script defer src="/__/firebase/init.js?useEmulator=true"></script>
-	
 	<!-- Login UI from Firebase -->
 	<script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
 	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
@@ -107,20 +106,20 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="editDisplayNameModalLabel">Edit your information</h4>
+					<h4 class="modal-title" id="editDisplayNameModalLabel" i18n="profile-edit-info">Edit your information</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 
 					<div class="mb-3 row">
-						<label for="newName" class="col-form-label">Please enter a new name:</label>
+						<label for="newName" class="col-form-label" i18n="profile-new-name">Please enter a new name:</label>
 						<div><input type="text" class="form-control col-10" name="newName" id="newName" /></div>
 					</div>
 
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-primary" id="editNameButton" onclick="changeName()" data-bs-dismiss="modal">Submit</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" i18n="generic-cancel">Cancel</button>
+					<button type="submit" class="btn btn-primary" id="editNameButton" onclick="changeName()" data-bs-dismiss="modal" i18n="generic-submit">Submit</button>
 				</div>
 			</div>
 		</div>
@@ -131,20 +130,20 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="editEmailModalLabel">Edit your information</h4>
+					<h4 class="modal-title" id="editEmailModalLabel" i18n="profile-edit-info">Edit your information</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 
 					<div class="mb-3 row">
-						<label for="newName" class="col-form-label">Please enter a new email address:</label>
+						<label for="newName" class="col-form-label" i18n="profile-new-email">Please enter a new email address:</label>
 						<div><input type="email" class="form-control col-10" name="newEmail" id="newEmail" /></div>
 					</div>
 
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-primary" id="editEmailButton" onclick="changeEmail()" data-bs-dismiss="modal">Submit</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" i18n="generic-cancel">Cancel</button>
+					<button type="submit" class="btn btn-primary" id="editEmailButton" onclick="changeEmail()" data-bs-dismiss="modal" i18n="generic-submit">Submit</button>
 				</div>
 			</div>
 		</div>
@@ -155,7 +154,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="clearModalLabel">Please confirm</h4>
+					<h4 class="modal-title" id="clearModalLabel" i18n="generic-please-confirm">Please confirm</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
@@ -163,8 +162,8 @@
 					<p>Please confirm that you want to reset all your checked items to unchecked.  This is unrecoverable.</p>
 				</div>
 				<div class="modal-footer">
-					<button type="cancel" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-success" data-bs-dismiss="modal" onClick="clearData()">Clear all</button>
+					<button type="cancel" class="btn btn-danger" data-bs-dismiss="modal" i18n="generic-cancel">Cancel</button>
+					<button type="submit" class="btn btn-success" data-bs-dismiss="modal" onClick="clearData()" i18n="profile-clear-all">Clear all</button>
 				</div>
 			</div>
 		</div>
@@ -175,7 +174,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="deleteModalLabel">Please confirm</h4>
+					<h4 class="modal-title" id="deleteModalLabel" i18n="generic-please-confirm">Please confirm</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
@@ -183,7 +182,7 @@
 					<p>Please confirm that you want to delete your account and all of your data from our servers.  This is unrecoverable.</p>
 				</div>
 				<div class="modal-footer">
-					<button type="cancel" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+					<button type="cancel" class="btn btn-danger" data-bs-dismiss="modal" i18n="generic-cancel">Cancel</button>
 					<button type="submit" class="btn btn-success" data-bs-dismiss="modal" onClick="deleteUser()">Delete my account</button>
 				</div>
 			</div>
@@ -198,6 +197,7 @@
 <script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="/js/nav.js" type="text/javascript"></script>
 <script src="/js/cookieBanner.js" type="text/javascript"></script>
+<script src="/js/lang.js" type="module"></script>
 <script defer src="/js/profile.js" type="text/javascript"></script>
 <script defer src="/js/auth.js" type="text/javascript"></script>
 	
