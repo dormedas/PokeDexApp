@@ -1,4 +1,4 @@
-const totalPokemon = 2950;	
+const totalPokemon = 2950;
 const totalShinyPokemon = 1352; // Includes all forms!
 
 function changeCollapse () {
@@ -77,7 +77,9 @@ function getProfileData (user) {
 		let trade = 0;
 		let place = 0;
 		let caught = 0;
+		let evolve = 0;
 		let lv100 = 0;
+		let unshiny = 0;
 		let shiny = 0;
 		const pokemonList = data.pokemon;
 		for (const pokemon in pokemonList) {
@@ -91,29 +93,40 @@ function getProfileData (user) {
 				case "place":
 					place++;
 					break;
+				case "evolv":
+					evolve++;
+					break;
 				case "caught":
 					caught++;
 					if (is_shiny)
 						shiny++;
+					else
+						unshiny++;
 					break;
 				case "lv100":
 					lv100++;
 					if (is_shiny)
 						shiny++;
+					else
+						unshiny++;
 					break;
 			}
 		}
-		console.log(shiny);
+		//console.log("Shiny count: " + shiny);
+		//console.log("Normal count: " + unshiny);
 		
 		let dexTotal = caught + lv100;
 		
 		let statsContent = `<h4>Statistics</h4>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon being traded</strong></p></div><div class="col-6"><p>${trade}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon ready to place</strong></p></div><div class="col-6"><p>${place}</p></div></div>`;
+		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon needing evolution</strong></p></div><div class="col-6"><p>${evolve}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon caught</strong></p></div><div class="col-6"><p>${caught}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Pok&eacute;mon at Lv100</strong></p></div><div class="col-6"><p>${lv100}</p></div></div>`;
+		statsContent += `<div class="row"><div class="col-6"><strong>Normal Pok&eacute;mon</strong></p></div><div class="col-6"><p>${unshiny}</p></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Shiny Pok&eacute;mon</strong></p></div><div class="col-6"><p>${shiny}</p></div></div>`
 		statsContent += `<div class="row"><div class="col-6"><strong>Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((dexTotal / totalPokemon) * 100)}%;" aria-valuenow="${Math.floor((dexTotal / totalPokemon) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((dexTotal / totalPokemon) * 100)}%</div></div></div></div>`;
+		statsContent += `<div class="row"><div class="col-6"><strong>Normal Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((unshiny / (totalPokemon - totalShinyPokemon)) * 100)}%;" aria-valuenow="${Math.floor((unshiny / (totalPokemon - totalShinyPokemon)) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((unshiny / (totalPokemon - totalShinyPokemon)) * 100)}%</div></div></div></div>`;
 		statsContent += `<div class="row"><div class="col-6"><strong>Shiny Living Dex progress</strong></p></div><div class="col-6"><div class="progress"><div class="progress-bar" role="progressbar" style="width: ${Math.floor((shiny / totalShinyPokemon) * 100)}%;" aria-valuenow="${Math.floor((shiny / totalShinyPokemon) * 100)}" aria-valuemin="0" aria-valuemax="100">${Math.floor((shiny / totalShinyPokemon) * 100)}%</div></div></div></div>`;
 		stats.innerHTML = statsContent;
     });
